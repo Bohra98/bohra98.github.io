@@ -21,6 +21,26 @@ Rebuild `bohra98.github.io` from a single static HTML file into a premium, anima
 4. **Case-study narrative is expanded, not verbatim-only**: Challenge → Decision → Result framing is inferred from the existing resume bullets and known tech stack per project (e.g., MFE + Module Federation → the 40% deploy-time win becomes a mini case study). No new factual claims/numbers are invented beyond what's already in the resume content; only framing/prose is added. User reviews all copy before it ships.
 5. **Deploy via GitHub Actions → gh-pages branch.** `main` holds the Vite/React source; a workflow builds on push and publishes `dist/` to a `gh-pages` branch (or Pages' native Actions deployment), with repo Pages settings pointed at that output. No manual build-and-commit step required going forward.
 
+## Theme
+
+Generated via Impeccable's palette seed (seed-059, hue 80°/amber-honey) instead of reusing the current site's neon cyan/violet/amber trio verbatim — the brief explicitly rejects "bright neon developer portfolio," so the palette moves from a 3-neon-color soup to one disciplined signature color plus a restrained secondary, in OKLCH:
+
+- **Strategy: Committed.** One saturated primary carries the identity; pure black bg/surface keep it from turning warm-and-soft.
+- `--bg`: `oklch(0.09 0.000 0)` — pure near-black, zero hue tint ("instrument-panel dark," not a warm near-black).
+- `--surface`: `oklch(0.16 0.006 80)` — bg pulled toward ink, faint brand-hue tint, for cards/panels.
+- `--ink`: `oklch(0.96 0.003 80)` — near-white body text, ≥7:1 against bg.
+- `--muted`: `oklch(0.55 0.01 80)` — secondary text, ≥3.5:1 against bg.
+- `--primary` (amber/honey signature): `oklch(0.78 0.15 80)` — CTAs, active nav state, hero glow, stat numbers. This replaces the old cyan as the dominant accent.
+- `--accent` (violet, secondary): `oklch(0.62 0.18 290)` — used sparingly: hero sphere's second gradient stop, achievement/cert hover glow, drawer accents. Distinct in hue and lightness from primary (contrast ratio well above the 1.7 floor), so the two never blur into a single wash.
+- All fills carry white/near-`--ink` text (both primary and accent sit in the saturated mid-luminance band).
+
+This keeps a visual thread to the current site (amber and violet both existed in the old palette) while dropping cyan and disciplining which color appears where, so the hero's dual-tone glow (amber + violet) reads as considered lighting rather than a rainbow.
+
+## Tooling
+
+- **21st-dev CLI** (`21st`, authenticated as `bohrayuvraj`) — used during implementation to search/pull reference component code and motion patterns (`21st search`, `21st get`, `21st generate`) for the hero, cards, and drawer interactions, adapted to this project's palette/data layer rather than dropped in verbatim.
+- **Impeccable** (project-installed, v4.0.4) — supplied the theme seed above; its `polish`/`audit` commands are used post-build for a production-quality pass (contrast, motion-reduction fallback, spacing rhythm) before calling sections done.
+
 ## Tech Stack
 
 - Vite + React 18 + TypeScript (strict)

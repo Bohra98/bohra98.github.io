@@ -1,3 +1,9 @@
+# Agent tooling config (Claude Code / Cursor / Gemini / OpenCode skill installs)
+/.claude/
+/.cursor/
+/.gemini/
+/.opencode/
+
 # Logs
 logs
 *.log
