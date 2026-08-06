@@ -40,6 +40,7 @@ This keeps a visual thread to the current site (amber and violet both existed in
 
 - **21st-dev CLI** (`21st`, authenticated as `bohrayuvraj`) — used during implementation to search/pull reference component code and motion patterns (`21st search`, `21st get`, `21st generate`) for the hero, cards, and drawer interactions, adapted to this project's palette/data layer rather than dropped in verbatim.
 - **Impeccable** (project-installed, v4.0.4) — supplied the theme seed above; its `polish`/`audit` commands are used post-build for a production-quality pass (contrast, motion-reduction fallback, spacing rhythm) before calling sections done.
+- **UI UX Pro Max** — design-pattern reasoning engine (layout patterns, anti-pattern checks, style/effect libraries) used as a second-opinion reference during section layout decisions and a pre-ship anti-pattern sweep. Does not override the theme already fixed above; used for layout/pattern/motion-effect selection, not re-deriving color.
 
 ## Tech Stack
 
